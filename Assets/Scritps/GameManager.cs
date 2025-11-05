@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnPartTimeChanged;
     public static event Action<string> OnNoticeUpdated;
 
-    public const float SECONDS_PER_GAME_DAY = 20f;
+    public const float SECONDS_PER_GAME_DAY = 10f;
     private float dayTimer ;
     private bool isPaused;
 
@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     private const int MONEY_GAIN_RESTAURANT = 300;
     private const int MONEY_GAIN_CONER_STORE= 400;
 
+    [SerializeField] private GameObject EndPanel;
+
     void Awake()
     {
         if (Instance != null)
@@ -64,7 +66,6 @@ public class GameManager : MonoBehaviour
             }
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         InitGame();
     }
 
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
             currentSemester++;
             currentDayInSemester = 1;
             currentJob = PartTimeJobType.None;
+            OnPartTimeChanged?.Invoke();
             
             notice = $"{CurrentSemester} 학기가 시작되었습니다.";
 
@@ -125,10 +127,8 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
-        
         OnTimeChanged?.Invoke();
         OnNoticeUpdated?.Invoke(notice);
-        OnPartTimeChanged?.Invoke();
     }
 
     public void SetPause(bool pause)
@@ -171,6 +171,8 @@ public class GameManager : MonoBehaviour
         SetPause(true);
         Debug.Log($"게임 종료: {endingType} 엔딩");
         OnNoticeUpdated?.Invoke($"게임 종료: {endingType} 엔딩");
+        EndPanel.SetActive(true);
+        enabled = false;
     }
 
     public string GetDayOfWeekText(DayOfWeek day)

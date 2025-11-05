@@ -67,13 +67,20 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.Instance.CurrentJob == PartTimeJobType.None)
         {
-            mainDefaultButton.SetActive(false);
-            mainPartTimeButton.SetActive(true);
-            Debug.Log("2");
+            if (!partTimeJobPanel.activeSelf)
+            {
+                mainDefaultButton.SetActive(false);
+                mainPartTimeButton.SetActive(true);   
+            }
+            else
+            {
+                ShowPanel(mainPanel);
+                mainDefaultButton.SetActive(false);
+                mainPartTimeButton.SetActive(true);   
+            }
         }
         else
         {
-            Debug.Log("3");
             ShowPanel(partTimeJobPanel);
             libraryPanel.SetActive(GameManager.Instance.CurrentJob == PartTimeJobType.Library);
             kidsCafePanel.SetActive(GameManager.Instance.CurrentJob == PartTimeJobType.KidsCafe);
@@ -89,13 +96,11 @@ public class UIManager : MonoBehaviour
 
     public void OnClickSettingButton()
     {
-        settingPanel.SetActive(true);
         GameManager.Instance.SetPause(true);
     }
 
     public void OnClickCloseSettingButton()
     {
-        settingPanel.SetActive(false);
         GameManager.Instance.SetPause(false);
     }
 
