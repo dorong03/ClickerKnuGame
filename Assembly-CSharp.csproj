@@ -46,11 +46,32 @@
     <Analyzer Include="C:\UNITY_EDITOR\6000.2.7f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scritps\UIManager.cs" />
-    <Compile Include="Assets\Scritps\SceneChanger.cs" />
-    <Compile Include="Assets\Scritps\PlayerSpriteChanger.cs" />
-    <Compile Include="Assets\Scritps\SpriteChanger.cs" />
-    <Compile Include="Assets\Scritps\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\SettingButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\Timer\TimeManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Lecture\LectureManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Stage\StageData.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\TimerUI.cs" />
+    <Compile Include="Assets\Resources\Scripts\Effect\FloatingStat.cs" />
+    <Compile Include="Assets\Resources\Scripts\Effect\ClickCombo.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\LecturePanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\InPartTimePanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Lecture\CouresData.cs" />
+    <Compile Include="Assets\Resources\Scripts\Notice\NoticePrinter.cs" />
+    <Compile Include="Assets\Resources\Scripts\Effect\ScreenShaker.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\PartTimeButtonPanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Status\StatusDisplayPanel.cs" />
+    <Compile Include="Assets\Resources\Data\CSVLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\ButtonUIPanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Lecture\TutionManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\MainUIPanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\Stage\StageManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\StartSceneUI.cs" />
+    <Compile Include="Assets\Resources\Scripts\Status\StatManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Sound\BgmManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\ExamUIPanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\PlayerSPrite\PlayerSpriteChanger.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\TaskUIPanel.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
