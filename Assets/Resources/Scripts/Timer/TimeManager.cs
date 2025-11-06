@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
     public static event Action OnTimeChanged; 
     public static event Action OnSemesterChanged; 
 
-    private const float SECONDS_PER_GAME_DAY = 15f; 
+    private const float SECONDS_PER_GAME_DAY = 0.4f; 
     
     [SerializeField] private float dayTimer = 0f;
 

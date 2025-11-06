@@ -12,6 +12,8 @@ public class MainUIPanel : MonoBehaviour, IPointerDownHandler
     [SerializeField] private RectTransform floatingParent;
     [SerializeField] private Sprite knowledgeIcon;
 
+    [SerializeField] private Sprite deferredSprite;
+
     private StageData currentStageData;
 
     void OnEnable()
@@ -27,8 +29,16 @@ public class MainUIPanel : MonoBehaviour, IPointerDownHandler
     private void OnStageChangedHandler(StageData stageData)
     {
         currentStageData = stageData;
-        if (mainImage != null)
-            mainImage.sprite = stageData.mainImage;
+        if (mainImage == null) return;
+        if (stageData.stageType == StageType.Home)
+        {
+            if (TuitionManager.Instance.isDeferred)
+            {
+                mainImage.sprite = deferredSprite;
+                return;
+            }
+        }
+        mainImage.sprite = stageData.mainImage;
     }
 
     public void OnPointerDown(PointerEventData eventData)
